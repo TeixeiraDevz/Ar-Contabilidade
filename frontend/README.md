@@ -1,59 +1,59 @@
-# ArGestaoContabil
+# AR Gestão Contábil e Financeira
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+Este projeto é um site institucional para a empresa **AR Gestão Contábil e Financeira**, desenvolvido com Angular e PrimeNG. O objetivo é apresentar informações da empresa, serviços, equipe, área para clientes e um assistente de IA para suporte.
 
-## Development server
+## Tecnologias Utilizadas
+- **Frontend:** Angular 20, PrimeNG, SCSS
+- **Backend:** (em desenvolvimento) Node.js, Express, TypeScript, MongoDB
 
-To start a local development server, run:
-
-```bash
-ng serve
+## Estrutura de Pastas
+```
+frontend/
+  ├── src/
+  │   ├── app/
+  │   │   ├── core/        # Serviços e utilitários
+  │   │   ├── auth/        # Autenticação
+  │   │   ├── cliente/     # Área do cliente (PF/PJ)
+  │   │   ├── home/        # Home, Sobre, Serviços, Contato
+  │   │   ├── equipe/      # Equipe da empresa
+  │   │   ├── shared/      # Componentes compartilhados
+  │   │   ├── layout/      # Header, Footer, Layout geral
+  │   │   └── ...
+  │   ├── assets/          # Imagens e arquivos estáticos
+  │   └── environments/    # Configurações de ambiente
+  ├── angular.json
+  └── package.json
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Como rodar o projeto
+1. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+2. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   ng serve --port 4201
+   ```
+   O site estará disponível em [http://localhost:4201](http://localhost:4201)
 
-## Code scaffolding
+## Dicas para desenvolvimento
+- Coloque imagens em `src/assets` e use o caminho `assets/nome-da-imagem.ext` no HTML.
+- Para criar novos componentes, use:
+  ```bash
+  ng generate component caminho/nome
+  ```
+- Para criar novos módulos:
+  ```bash
+  ng generate module caminho/nome --routing
+  ```
+- O menu e as rotas já estão configurados para Home, Sobre, Serviços e Contato.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Estrutura futura (backend)
+O backend será implementado em `backend/` com Node.js, Express, TypeScript e MongoDB, seguindo princípios SOLID e arquitetura em camadas (controllers, services, repositories, dtos, models, routes, utils).
 
-```bash
-ng generate component component-name
-```
+## Contato
+Para dúvidas ou sugestões, entre em contato com a equipe AR Gestão Contábil e Financeira.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Licença
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto está licenciado sob os termos da licença MIT. Veja o arquivo LICENSE para mais detalhes.
