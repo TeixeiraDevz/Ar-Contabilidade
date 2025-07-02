@@ -1,0 +1,27 @@
+.footer {
+  width: 100%;
+  background: #0a3180;
+  color: #fff;
+  padding: 24px 0 16px 0;
+  text-align: center;
+  border-top: 3px solid #0a3180;
+  margin-top: 48px;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__brand {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.footer__copy {
+  font-size: 1rem;
+  opacity: 0.8;
+}
