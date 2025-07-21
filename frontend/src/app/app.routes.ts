@@ -1,12 +1,9 @@
 import { Routes } from '@angular/router';
-import { Home } from './home/home/home';
-import { Sobre } from './home/sobre/sobre';
-import { Servicos } from './home/servicos/servicos';
-import { Contato } from './home/contato/contato';
 
 export const routes: Routes = [
-  { path: '', component: Home },
-  { path: 'sobre', component: Sobre },
-  { path: 'servicos', component: Servicos },
-  { path: 'contato', component: Contato },
+  { path: '', loadChildren: () => import('./home/home-module').then(m => m.HomeModule) },
+  { path: 'cliente', loadChildren: () => import('./cliente/cliente-module').then(m => m.ClienteModule) },
+  { path: 'equipe', loadChildren: () => import('./equipe/equipe-module').then(m => m.EquipeModule) },
+  { path: 'auth', loadChildren: () => import('./auth/auth-module').then(m => m.AuthModule) },
 ];
+ 
