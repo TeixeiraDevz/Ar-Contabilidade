@@ -1,1 +1,28 @@
-<p>Lista de Clientes</p> 
+<div class="cliente-list-container">
+  <h2>Clientes</h2>
+  <div *ngIf="loading">Carregando...</div>
+  <div class="success" *ngIf="successMsg">{{ successMsg }}</div>
+  <div class="error" *ngIf="errorMsg">{{ errorMsg }}</div>
+  <table *ngIf="clientes.length > 0">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{ cliente.nome }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>{{ cliente.telefone }}</td>
+        <td>
+          <button (click)="editar(cliente)">Editar</button>
+          <button (click)="excluir(cliente)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="clientes.length === 0 && !loading">Nenhum cliente cadastrado.</div>
+</div> 

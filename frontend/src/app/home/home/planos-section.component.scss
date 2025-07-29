@@ -1,0 +1,64 @@
+.planos-section {
+  background: #b3c7e6;
+  padding: 64px 0 48px 0;
+}
+.planos-title {
+  text-align: center;
+  color: #0B1628;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+.planos-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+.plano-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0001;
+  padding: 32px 28px;
+  width: 320px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.plano-card.smart {
+  border-top: 6px solid #f7bfa0;
+}
+.plano-card.agile {
+  border-top: 6px solid #f7d7a0;
+}
+.plano-card.outsourcing {
+  border-top: 6px solid #1a4fa0;
+}
+.plano-card h3 {
+  color: #1a4fa0;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.plano-card p {
+  color: #0B1628;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.plano-card ul {
+  padding-left: 18px;
+  margin: 0;
+  color: #0B1628;
+  font-size: 1rem;
+}
+@media (max-width: 900px) {
+  .planos-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .plano-card {
+    width: 90vw;
+    min-width: unset;
+  }
+} 

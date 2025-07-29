@@ -1,1 +1,31 @@
-<p>Formulário de Cliente</p> 
+<form class="form" [formGroup]="form" (ngSubmit)="submit()">
+  <ul class="wrapper">
+    <li style="--i:4;">
+      <input class="input" type="text" placeholder="Nome" formControlName="nome" required />
+      <div class="error" *ngIf="nome?.invalid && nome?.touched">
+        <span *ngIf="nome?.errors?.['required']">Nome é obrigatório.</span>
+        <span *ngIf="nome?.errors?.['minlength']">Mínimo 3 caracteres.</span>
+      </div>
+    </li>
+    <li style="--i:3;">
+      <input class="input" type="text" placeholder="Telefone" formControlName="telefone" required maxlength="11" />
+      <div class="error" *ngIf="telefone?.invalid && telefone?.touched">
+        <span *ngIf="telefone?.errors?.['required']">Telefone é obrigatório.</span>
+        <span *ngIf="telefone?.errors?.['pattern']">Digite apenas números (10 ou 11 dígitos).</span>
+      </div>
+    </li>
+    <li style="--i:2;">
+      <input class="input" type="email" placeholder="E-mail" formControlName="email" required />
+      <div class="error" *ngIf="email?.invalid && email?.touched">
+        <span *ngIf="email?.errors?.['required']">E-mail é obrigatório.</span>
+        <span *ngIf="email?.errors?.['email']">E-mail inválido.</span>
+      </div>
+    </li>
+    <button style="--i:1;" [disabled]="form.invalid || loading">
+      <span *ngIf="loading">Salvando...</span>
+      <span *ngIf="!loading">Salvar</span>
+    </button>
+  </ul>
+  <div class="success" *ngIf="successMsg">{{ successMsg }}</div>
+  <div class="error" *ngIf="errorMsg">{{ errorMsg }}</div>
+</form> 

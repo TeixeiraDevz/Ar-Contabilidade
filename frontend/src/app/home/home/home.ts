@@ -1,12 +1,24 @@
 import { Component } from '@angular/core';
+import { HeroSectionComponent } from './hero-section.component';
+import { ServicosSectionComponent } from './servicos-section.component';
+import { MotivacaoSectionComponent } from './motivacao-section.component';
+import { PlanosSectionComponent } from './planos-section.component';
+import { ParceirosEquipeSectionComponent } from './parceiros-equipe-section.component';
+import { FooterSectionComponent } from './footer-section.component';
 
 @Component({
   selector: 'app-home',
-  imports: [],
   templateUrl: './home.html',
-  styleUrl: './home.scss'
+  styleUrl: './home.scss',
+  standalone: true,
+  imports: [
+    HeroSectionComponent,
+    ServicosSectionComponent,
+    MotivacaoSectionComponent,
+    PlanosSectionComponent,
+    ParceirosEquipeSectionComponent,
+    FooterSectionComponent
+  ],
 })
-export class Home {
-
-}
+export class Home {}
 

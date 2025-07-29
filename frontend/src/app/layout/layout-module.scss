@@ -1,0 +1,18 @@
+.internal-layout {
+  display: flex;
+  min-height: 100vh;
+}
+.internal-content {
+  flex: 1;
+  margin-left: 220px;
+  padding: 32px 16px;
+}
+@media (max-width: 900px) {
+  .internal-layout {
+    flex-direction: column;
+  }
+  .internal-content {
+    margin-left: 0;
+    padding: 16px 4vw;
+  }
+} 

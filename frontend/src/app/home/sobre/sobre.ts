@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sobre',
-  imports: [],
   templateUrl: './sobre.html',
-  styleUrl: './sobre.scss'
+  styleUrl: './sobre.scss',
+  standalone: true,
 })
-export class Sobre {
-
-}
+export class Sobre { }

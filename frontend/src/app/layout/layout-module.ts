@@ -1,12 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
-
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+@Component({
+  selector: 'app-internal-layout',
+  template: `
+    <div class="internal-layout">
+      <div class="internal-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  `,
+  styleUrls: ['./layout-module.scss'],
+  standalone: true,
+  imports: [RouterOutlet],
 })
-export class LayoutModule { }
+export class InternalLayout {}

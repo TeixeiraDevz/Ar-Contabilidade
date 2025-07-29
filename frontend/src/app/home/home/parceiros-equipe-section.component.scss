@@ -1,0 +1,63 @@
+.parceiros-equipe-section {
+  background: #b3c7e6;
+  padding: 64px 0 48px 0;
+  text-align: center;
+}
+.parceiros-title {
+  color: #0B1628;
+  font-size: 2.2rem;
+  margin-bottom: 32px;
+}
+.parceiros-logos {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.parceiros-logos img {
+  height: 48px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 8px #0001;
+}
+.equipe-apresentacao {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0001;
+  padding: 32px 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.equipe-apresentacao h3 {
+  color: #1a4fa0;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.equipe-apresentacao p {
+  color: #0B1628;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+.equipe-fotos {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.equipe-fotos img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #eaf2ff;
+  box-shadow: 0 2px 8px #0001;
+}
+@media (max-width: 900px) {
+  .parceiros-logos {
+    gap: 16px;
+  }
+  .equipe-fotos {
+    gap: 12px;
+  }
+} 
