@@ -6,7 +6,7 @@ import { EquipeFormComponent } from './form/equipe-form.component';
 const routes: Routes = [
   { path: '', component: EquipeListComponent },
   { path: 'novo', component: EquipeFormComponent },
-  { path: 'editar/:id', component: EquipeFormComponent }
+  { path: 'editar/:id', component: EquipeFormComponent, data: { prerender: false } }
 ];
 
 @NgModule({

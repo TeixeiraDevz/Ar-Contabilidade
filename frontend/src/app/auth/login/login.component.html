@@ -2,23 +2,42 @@
   <ul class="wrapper">
     <li style="--i:3;">
       <input class="input" type="email" placeholder="E-mail" formControlName="email" required />
-      <div class="error" *ngIf="email?.invalid && email?.touched">
-        <span *ngIf="email?.errors?.['required']">E-mail é obrigatório.</span>
-        <span *ngIf="email?.errors?.['email']">E-mail inválido.</span>
-      </div>
+      @if (email?.invalid && email?.touched) {
+        <div class="error">
+          @if (email?.errors?.['required']) {
+            <span>E-mail é obrigatório.</span>
+          }
+          @if (email?.errors?.['email']) {
+            <span>E-mail inválido.</span>
+          }
+        </div>
+      }
     </li>
     <li style="--i:2;">
       <input class="input" type="password" placeholder="Senha" formControlName="senha" required />
-      <div class="error" *ngIf="senha?.invalid && senha?.touched">
-        <span *ngIf="senha?.errors?.['required']">Senha é obrigatória.</span>
-        <span *ngIf="senha?.errors?.['minlength']">Mínimo 6 caracteres.</span>
-      </div>
+      @if (senha?.invalid && senha?.touched) {
+        <div class="error">
+          @if (senha?.errors?.['required']) {
+            <span>Senha é obrigatória.</span>
+          }
+          @if (senha?.errors?.['minlength']) {
+            <span>Mínimo 6 caracteres.</span>
+          }
+        </div>
+      }
     </li>
     <button style="--i:1;" [disabled]="form.invalid || loading">
-      <span *ngIf="loading">Entrando...</span>
-      <span *ngIf="!loading">Entrar</span>
+      @if (loading) {
+        <span>Entrando...</span>
+      } @else {
+        <span>Entrar</span>
+      }
     </button>
   </ul>
-  <div class="success" *ngIf="successMsg">{{ successMsg }}</div>
-  <div class="error" *ngIf="errorMsg">{{ errorMsg }}</div>
+  @if (successMsg) {
+    <div class="success">{{ successMsg }}</div>
+  }
+  @if (errorMsg) {
+    <div class="error">{{ errorMsg }}</div>
+  }
 </form> 

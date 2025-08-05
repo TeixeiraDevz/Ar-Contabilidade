@@ -1,30 +1,42 @@
 <div class="equipe-list-container">
   <h2>Equipe</h2>
-  <div *ngIf="loading">Carregando...</div>
-  <div class="success" *ngIf="successMsg">{{ successMsg }}</div>
-  <div class="error" *ngIf="errorMsg">{{ errorMsg }}</div>
-  <table *ngIf="equipe.length > 0">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Cargo</th>
-        <th>E-mail</th>
-        <th>Telefone</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let membro of equipe">
-        <td>{{ membro.nome }}</td>
-        <td>{{ membro.cargo }}</td>
-        <td>{{ membro.email }}</td>
-        <td>{{ membro.telefone }}</td>
-        <td>
-          <button (click)="editar(membro)">Editar</button>
-          <button (click)="excluir(membro)">Excluir</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div *ngIf="equipe.length === 0 && !loading">Nenhum membro cadastrado.</div>
+  @if (loading) {
+    <div>Carregando...</div>
+  }
+  @if (successMsg) {
+    <div class="success">{{ successMsg }}</div>
+  }
+  @if (errorMsg) {
+    <div class="error">{{ errorMsg }}</div>
+  }
+  @if (equipe.length > 0) {
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Cargo</th>
+          <th>E-mail</th>
+          <th>Telefone</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (membro of equipe; track membro.id) {
+          <tr>
+            <td>{{ membro.nome }}</td>
+            <td>{{ membro.cargo }}</td>
+            <td>{{ membro.email }}</td>
+            <td>{{ membro.telefone }}</td>
+            <td>
+              <button (click)="editar(membro)">Editar</button>
+              <button (click)="excluir(membro)">Excluir</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+  @if (equipe.length === 0 && !loading) {
+    <div>Nenhum membro cadastrado.</div>
+  }
 </div> 
