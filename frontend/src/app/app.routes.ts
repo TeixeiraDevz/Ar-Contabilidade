@@ -10,7 +10,7 @@ export const routes: Routes = [
     children: [
       { path: 'apresentacao', loadComponent: () => import('./home/sobre/sobre').then(m => m.Sobre) },
       { path: 'cliente', loadChildren: () => import('./cliente/cliente-module').then(m => m.ClienteModule) },
-      { path: 'equipe', loadChildren: () => import('./equipe/equipe-module').then(m => m.EquipeModule) },
+      // rota 'equipe' removida conforme escopo atual
       // aqui estão outras rotas internas
     ]
   },

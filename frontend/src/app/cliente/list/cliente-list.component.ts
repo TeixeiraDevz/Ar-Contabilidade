@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 interface Cliente {
   id: number;
@@ -11,6 +12,7 @@ interface Cliente {
   selector: 'app-cliente-list',
   templateUrl: './cliente-list.component.html',
   standalone: true,
+  imports: [CommonModule],
 })
 export class ClienteListComponent {
   clientes: Cliente[] = [
