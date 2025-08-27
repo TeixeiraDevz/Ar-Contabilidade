@@ -1,10 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
   background: #d8e6ff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+}
+
+/* Responsividade global */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Uiverse.io form styles - global */
@@ -14,12 +26,19 @@ html, body {
   position: relative;
   padding: 10px;
   border: 0.1px solid #575cb5;
+  font-family: inherit;
 }
 
 button {
   background: #6d74e3;
   border: none;
   color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background: #5a61d0;
 }
 
 .wrapper {
@@ -131,6 +150,7 @@ button:active {
   align-items: center;
   min-height: 60vh;
   background: #d8e6ff;
+  padding: 20px;
 }
 
 .error {
@@ -140,11 +160,30 @@ button:active {
   margin-bottom: 2px;
   text-align: left;
 }
+
 .success {
   color: #27ae60;
   font-size: 1em;
   margin-top: 10px;
   text-align: center;
+}
+
+/* Responsividade para formulários */
+@media (max-width: 600px) {
+  .form {
+    padding: 16px;
+    min-height: 50vh;
+  }
+  
+  .wrapper li, button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .wrapper li::after, button::after {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 /* Fim Uiverse.io form styles */
