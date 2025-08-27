@@ -1,14 +1,70 @@
-<header class="header">
-  <div class="header__logo">
-    <img src="/assets/Logo.png" alt="AR Contabilidade" class="header__logo-img">
+<header class="navbar-flow">
+  <div class="navbar-flow__container">
+    <div class="navbar-flow__emblem">
+      <img src="/assets/Logo.png" alt="AR Contabilidade" class="navbar-flow__logo">
+      <span class="navbar-flow__brand">Ar</span>
+    </div>
+
+    <nav class="navbar-flow__links">
+      <div class="link has-submenu">
+        <button class="link__button" type="button">Componentes</button>
+        <div class="submenu submenu--grid">
+          <a routerLink="/components/button" class="submenu__item">Button</a>
+          <a routerLink="/components/hero" class="submenu__item">Hero Section</a>
+          <a routerLink="/components/navbar" class="submenu__item">Navbar</a>
+          <a routerLink="/components/footer" class="submenu__item">Footer</a>
+          <a routerLink="/components/cards" class="submenu__item">Cards</a>
+          <a routerLink="/components/forms" class="submenu__item">Forms</a>
+        </div>
+      </div>
+
+      <div class="link has-submenu">
+        <button class="link__button" type="button">Templates</button>
+        <div class="submenu submenu--feature">
+          <a routerLink="/templates/portfolio" class="feature">
+            <span class="feature__title">Portfolio Template</span>
+            <span class="feature__info">Clean, personal showcase for designers & developers.</span>
+          </a>
+          <a routerLink="/templates/business" class="feature">
+            <span class="feature__title">Business Template</span>
+            <span class="feature__info">Professional website layout for startups & businesses.</span>
+          </a>
+          <a routerLink="/templates/blog" class="feature">
+            <span class="feature__title">Blog Template</span>
+            <span class="feature__info">Minimal blog with modern reading experience.</span>
+          </a>
+          <a routerLink="/templates/landing" class="feature">
+            <span class="feature__title">Landing Page</span>
+            <span class="feature__info">High-converting landing page for product launches.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="link has-submenu">
+        <button class="link__button" type="button">Vitrine</button>
+        <div class="submenu submenu--column">
+          <a routerLink="/showcase/astroship" class="submenu__item">Astroship</a>
+          <a routerLink="/showcase/papermod" class="submenu__item">PaperMod</a>
+          <a routerLink="/showcase/satori" class="submenu__item">Satori</a>
+          <a routerLink="/showcase/scrollx" class="submenu__item">ScrollX</a>
+          <a routerLink="/showcase/speedyfolio" class="submenu__item">Speedyfolio</a>
+        </div>
+      </div>
+
+      <a routerLink="/about" class="link">Sobre</a>
+    </nav>
+
+    <div class="navbar-flow__actions">
+      <div class="search">
+        <input type="text" placeholder="Componentes de pesquisa" class="search__input">
+        <span class="search__kbd">⌘K</span>
+        <button class="search__submit" type="button" aria-label="Buscar"></button>
+      </div>
+      <button class="theme-toggle" type="button" (click)="toggleTheme()" aria-label="Alternar tema">
+        <span class="theme-toggle__sun"></span>
+        <span class="theme-toggle__moon"></span>
+      </button>
+    </div>
   </div>
-  
-  <nav class="header__nav">
-    <ul>
-      <li><a routerLink="/">Início</a></li>
-      <li><a routerLink="/sobre">Sobre</a></li>
-      <li><a routerLink="/servicos">Serviços</a></li>
-      <li><a routerLink="/contato">Contato</a></li>
-    </ul>
-  </nav>
+  <div class="lamp-glow" aria-hidden="true"></div>
 </header>
