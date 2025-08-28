@@ -1,14 +1,29 @@
-<header class="header">
-  <div class="header__logo">
-    <img src="/assets/Logo.png" alt="AR Contabilidade" class="header__logo-img">
+<header class="navbar-flow">
+  <div class="navbar-flow__container">
+    <div class="navbar-flow__emblem">
+      <img src="/assets/Logo.png" alt="AR Contabilidade" class="navbar-flow__logo">
+    </div>
+
+    <nav class="navbar-flow__links">
+      <a routerLink="/" class="link">Início</a>
+      <a routerLink="/sobre" class="link">Sobre</a>
+      <a routerLink="/servicos" class="link">Serviços</a>
+      <a routerLink="/contato" class="link">Contato</a>
+      <a routerLink="/equipe" class="link">Equipe</a>
+      <a routerLink="/planos" class="link">Planos</a>
+    </nav>
+
+    <div class="navbar-flow__actions">
+      <div class="search">
+        <input type="text" placeholder="Buscar..." class="search__input">
+        <span class="search__kbd">⌘K</span>
+        <button class="search__submit" type="button" aria-label="Buscar"></button>
+      </div>
+      <button class="theme-toggle" type="button" (click)="toggleTheme()" aria-label="Alternar tema">
+        <span class="theme-toggle__sun"></span>
+        <span class="theme-toggle__moon"></span>
+      </button>
+    </div>
   </div>
-  
-  <nav class="header__nav">
-    <ul>
-      <li><a routerLink="/">Início</a></li>
-      <li><a routerLink="/sobre">Sobre</a></li>
-      <li><a routerLink="/servicos">Serviços</a></li>
-      <li><a routerLink="/contato">Contato</a></li>
-    </ul>
-  </nav>
+  <div class="lamp-glow" aria-hidden="true"></div>
 </header>

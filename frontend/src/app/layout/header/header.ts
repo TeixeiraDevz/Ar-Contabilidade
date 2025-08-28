@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ThemeService } from '../../core/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +10,9 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.scss'
 })
 export class Header {
+  constructor(private themeService: ThemeService) {}
 
+  toggleTheme() {
+    this.themeService.toggle();
+  }
 }
