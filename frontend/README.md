@@ -6,6 +6,9 @@ Este projeto é um site institucional para a empresa **AR Gestão Contábil e Fi
 - **Frontend:** Angular 20, PrimeNG, SCSS
 - **Backend:** (em desenvolvimento) Node.js, Express, TypeScript, MongoDB
 
+## Plano de Desenvolvimento (Sprints)
+Consulte o plano detalhado de sprints e status em `SPRINTS.md`.
+
 ## Estrutura de Pastas
 ```
 frontend/
