@@ -1,0 +1,12 @@
+<form class="form" [formGroup]="form" (ngSubmit)="submit()">
+  <div>
+    <input type="text" placeholder="Nome" formControlName="nome" />
+  </div>
+  <div>
+    <input type="email" placeholder="E-mail" formControlName="email" />
+  </div>
+  <div>
+    <input type="password" placeholder="Senha" formControlName="senha" />
+  </div>
+  <button [disabled]="form.invalid || loading">{{ loading ? 'Criando...' : 'Criar conta' }}</button>
+</form>

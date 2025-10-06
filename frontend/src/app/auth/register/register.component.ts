@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
 import { TokenService } from '../../core/services/token.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
+  selector: 'app-register',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
+  templateUrl: './register.component.html'
 })
-export class LoginComponent {
+export class RegisterComponent {
   form: FormGroup;
   loading = false;
   successMsg = '';
@@ -18,6 +18,7 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder, private auth: AuthService, private tokenService: TokenService) {
     this.form = this.fb.group({
+      nome: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(6)]],
     });
@@ -31,20 +32,21 @@ export class LoginComponent {
       return;
     }
     this.loading = true;
-    this.auth.login(this.form.value).subscribe({
+    this.auth.register(this.form.value).subscribe({
       next: (res) => {
         this.tokenService.setToken(res.token);
-        this.successMsg = 'Login realizado com sucesso!';
+        this.successMsg = 'Conta criada com sucesso!';
         this.form.reset();
         this.loading = false;
       },
       error: () => {
-        this.errorMsg = 'Erro ao fazer login. Tente novamente.';
+        this.errorMsg = 'Erro ao criar conta. Tente novamente.';
         this.loading = false;
-      },
+      }
     });
   }
 
+  get nome() { return this.form.get('nome'); }
   get email() { return this.form.get('email'); }
   get senha() { return this.form.get('senha'); }
-} 
+}
